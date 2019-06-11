@@ -16,8 +16,10 @@
   <div class="container">
     <div class="row">
       <div class="col text-center">
-        <img *ngIf="museum && museum.logo" class="heading-image" src="'/uploads/' + museum._id + '/' + museum.logo.filename" alt="museum.logo.alternativeText">
-        <img *ngIf="museum && !museum.logo" class="heading-image" src="../../../assets/images/wAVdio_Logo_gross.png" alt="Logo">
+        <img *ngIf="museum && museum.logo" class="heading-image"
+          [src]="'/uploads/' + museum._id + '/' + museum.logo.filename" alt="museum.logo.alternativeText">
+        <img *ngIf="museum && !museum.logo" class="heading-image" src="../../../assets/images/wAVdio_Logo_gross.png"
+          alt="Logo">
         <h1 *ngIf="museum" class="display-4 mt-2">{{ getMuseumContent(locale).welcomeText }}</h1>
       </div>
     </div>
@@ -31,7 +33,7 @@
         <ngx-slick-carousel *ngIf="termsOfUseFlag" class="carousel mx-4" [config]="slideConfig">
           <div ngxSlickItem *ngFor="let exposition of expositions" style="height: 175px" class="slide">
             <app-exposition-card [exposition]="exposition" [width]="'95%'" [height]="'95%'" [selectedLanguage]="locale"
-                                 [link]="'/exposition/'+ exposition._id"></app-exposition-card>
+              [link]="'/exposition/'+ exposition._id"></app-exposition-card>
           </div>
         </ngx-slick-carousel>
       </div>
@@ -45,7 +47,7 @@
       <div class="col-12 text-center">
         <div class="form-check">
           <input class="form-check-input" type="checkbox" value="" id="termsOfUse" [checked]="termsOfUseFlag"
-                 (change)="onTermsChange()">
+            (change)="onTermsChange()">
           <label for="termsOfUse">
             <span i18n>Ich akzeptiere die</span>
             <a routerLink="/user/usage-terms/termsOfUse" i18n> Nutzungsbedingungen</a>
