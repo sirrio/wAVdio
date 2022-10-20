@@ -45,7 +45,7 @@
     "http-errors": "^1.7.1",
     "jquery": "^3.3.1",
     "jsonwebtoken": "^8.5.0",
-    "mongoose": "^4.13.17",
+    "mongoose": "^4.13.21",
     "morgan": "^1.9.1",
     "ngx-cookie-service": "^2.1.0",
     "ngx-print": "^1.1.4",
